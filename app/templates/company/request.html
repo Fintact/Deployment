@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fintact - SCF Solution</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link href="/static/dashboard/css/style.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+        <div class="nav-header">
+            <div class="brand-logo"><a href="/company"><b><img src="/static/assets/images/logo.png" alt=""> </b><span class="brand-title"><img src="/static/assets/images/logo-text.png" alt=""></span></a>
+            </div>
+            <div class="nav-control">
+                <div class="hamburger"><span class="line"></span>  <span class="line"></span>  <span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <div class="header">    
+            <div class="header-content">
+                <div class="header-left">
+                    <ul>
+                        <li class="icons position-relative"><a href="javascript:void(0)"><i class="icon-magnifier f-s-16"></i></a>
+                            <div class="drop-down animated bounceInDown">
+                                <div class="dropdown-content-body">
+                                    <div class="header-search" id="header-search">
+                                        <form >
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Search">
+                                                <div class="input-group-append"><span class="input-group-text"><i class="icon-magnifier"></i></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-right">
+                    <ul>
+                        
+                        <li class="icons">
+                            <a href="javascript:void(0)" class="log-user">
+                                <img src="/static/assets/images/avatar/1.jpg" alt=""> <span>{{name}}</span>  <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-profile animated bounceInDown">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()"><i class="icon-user"></i> <span>My Profile</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-wallet"></i> <span>My Wallet</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-envelope"></i> <span>Inbox</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="fa fa-cog"></i> <span>Setting</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                        </li>
+                                        <li><a href="/logout"><i class="icon-power"></i> <span>Logout</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>  
+                    <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-collage"></i><span class="nav-text">Supplier</span> <span class="badge bg-lgreen text-white nav-badge">3</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="/company/request">Request for Approval</a>
+                            </li>
+                            <li>
+                                <a href="/company/supplier/dynamic">Dynamic Invoice Status</a>
+                            </li>
+                            <li>
+                                <a href="/company/supplier/market">MarketPlace Invoice Status</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-collage"></i><span class="nav-text">Enterprise</span> <span class="badge bg-lgreen text-white nav-badge">3</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="/company/approve">Approve Supplier</a>
+                            </li>
+                            <li><a href="/company/enterprise/dynamic">Dynamic Invoice Status</a>
+                            </li>
+                            <li><a href="/company/enterprise/market">MarketPlace Invoice Status</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+    
+                    <li class="nav-label">Billing</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-message-draw"></i>                        <span class="nav-text">Invoice</span><span class="badge badge-success nav-badge">03</span></a>
+                        <ul aria-expanded="false">
+
+                            <li><a href="/company/createinvoice">Create Invoice</a>
+                            </li>
+                        </ul>
+                    </li>
+                 
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col p-md-0">
+                        <h4>Request Buyer</h4>
+                    </div>
+                    <div class="col p-md-0">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/company">Home</a>
+                            </li>
+                          
+                            <li class="breadcrumb-item active">Request Buyer
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="row">
+                   
+
+                    <div class="col-lg-12">
+                        <div class="card form-card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4">Supplier Code</h4>
+                                <form id="Code">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="inlineFormInputGroupUsername2">Supplier Code</label>
+                                        <input type="text" size="50" class="form-control mb-2 mr-sm-5" id="BuyerCode" placeholder="Supplier Code">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <button class="btn btn-primary btn-form">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                   
+
+                </div>
+
+            </div>
+            <!-- #/ container -->
+        </div>
+        
+           </div>
+    <script src="/static/assets/plugins/common/common.min.js"></script>
+    <script src="/static/dashboard/js/custom.min.js"></script>
+    <script src="/static/dashboard/js/settings.js"></script>
+    <script src="/static/dashboard/js/gleek.js"></script>
+    <script src="/static/dashboard/js/styleSwitcher.js"></script>
+    
+    <script>
+        $( document ).ready(function() {
+   
+            $('#Code').on('submit', function (event) {
+            
+                $.ajax({
+				data :{
+					
+					code :$('#BuyerCode').val()
+				},
+				type : "POST",
+				url : '/supplier_action'
+	  })
+		  .done(function(data){
+			  if (data.check)
+			  {
+				$(location).attr('href', data.link);	
+			  }
+			  else{
+					alert("Error")
+			  }
+		  });
+
+               
+            event.preventDefault();
+
+});
+
+            
+    });
+    </script>
+
+</body>
+
+</html>

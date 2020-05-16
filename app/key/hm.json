@@ -1,0 +1,24 @@
+{
+  "mnemonic": [
+    "unfold",
+    "slide",
+    "prefer",
+    "jar",
+    "palm",
+    "noise",
+    "symbol",
+    "wealth",
+    "dice",
+    "obey",
+    "vicious",
+    "sing",
+    "jealous",
+    "duty",
+    "piece"
+  ],
+  "secret": "38e00737f36862e09b5c0665490efedd52fb719e",
+  "amount": "1632397031",
+  "pkh": "tz1b5KVQLpSUyPQThoWYAfxtSukgrhAgMFQD",
+  "password": "EQJ0vc8FND",
+  "email": "qbugxeek.ikcujcsz@tezos.example.org"
+}

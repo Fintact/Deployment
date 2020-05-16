@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fintact - SCF Solution</title>
+   
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/logo.png">
+    <link href="/static/dashboard/css/style.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <div class="nav-header">
+            <div class="brand-logo"><a href="index.html"><b><img src="/static/assets/images/logo.png" alt=""> </b><span class="brand-title"><img src="/static/assets/images/logo-text.png" alt=""></span></a>
+            </div>
+            <div class="nav-control">
+                <div class="hamburger"><span class="line"></span>  <span class="line"></span>  <span class="line"></span>
+                </div>
+            </div>
+        </div>
+      
+        <div class="header">    
+            <div class="header-content">
+                <div class="header-left">
+                    <ul>
+                        <li class="icons position-relative"><a href="javascript:void(0)"><i class="icon-magnifier f-s-16"></i></a>
+                            <div class="drop-down animated bounceInDown">
+                                <div class="dropdown-content-body">
+                                    <div class="header-search" id="header-search">
+                                        <form action="#">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Search">
+                                                <div class="input-group-append"><span class="input-group-text"><i class="icon-magnifier"></i></span>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-right">
+                    <ul>
+                        <li class="icons">
+                            <a href="javascript:void(0)" class="log-user">
+                                <img src="/static/assets/images/avatar/1.jpg" alt=""> <span>{{ name }}</span>  <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-profile animated bounceInDown">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()"><i class="icon-user"></i> <span>My Profile</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-wallet"></i> <span>My Wallet</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-envelope"></i> <span>Inbox</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="fa fa-cog"></i> <span>Setting</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                        </li>
+                                        <li><a href="/logout"><i class="icon-power"></i> <span>Logout</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>
+                                      
+                    <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-collage"></i><span class="nav-text">Supplier</span> <span class="badge bg-lgreen text-white nav-badge">3</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="/company/request">Request for Approval</a>
+                            </li>
+                            <li>
+                                <a href="/company/supplier/dynamic">Dynamic Invoice Status</a>
+                            </li>
+                            <li>
+                                <a href="/company/supplier/market">MarketPlace Invoice Status</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-collage"></i><span class="nav-text">Enterprise</span> <span class="badge bg-lgreen text-white nav-badge">3</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="/company/approve">Approve Supplier</a>
+                            </li>
+                            <li><a href="/company/enterprise/dynamic">Dynamic Invoice Status</a>
+                            </li>
+                            <li><a href="/company/enterprise/market">MarketPlace Invoice Status</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                    <li class="nav-label">Billing</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-message-draw"></i>                        <span class="nav-text">Invoice</span><span class="badge badge-success nav-badge">1</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="/company/createinvoice">Create Invoice</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      
+        <div class="content-body">
+            <div class="container-fluid">
+                
+                <div class="row">
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="card stat-widget-five">
+                            <div class="card-body">
+                                <div class="media">
+                                    <div class="icon mr-3 bg-info">
+                                        <i class="fa fa-usd"></i>
+                                    </div>
+                                    <div class="media-body text-right">
+                                        <h2 class="mt-0 mb-2 text-info">{{ balance }}</h2><span class="text-pale-sky">Balance</span>
+                                    </div>
+                                </div>
+                                <div class="bottom-text mt-0">
+                                    <p class="m-0">$30,820</p>
+                                    <span><i class="fa fa-caret-up"></i> 35.45%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="card stat-widget-progress">
+                            <div class="card-body">
+                                <h5 class="text-pale-sky">Total Receivable: $12,570</h5>
+                                <h5>Company Hash: {{ hash }}</h5>
+                                <div class="progress mb-4 mt-3">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="d-flex justify-content-between flex-wrap">
+                                            <div class="item">
+                                                <h5 class="text-warning">Current</h5>
+                                                <h5 class="mb-0 text-pale-sky">$2840</h5>
+                                            </div>
+                                            <div class="item">
+                                                <h5 class="d-inline-block text-warning">Override</h5>
+                                                <span>(15-30 days)</span>
+                                                <h5 class="mb-0 text-pale-sky">$2840</h5>
+                                            </div>
+                                            <div class="item">
+                                                <span>Above 30 days</span>
+                                                <h5 class="mb-0 text-pale-sky">$2840</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-9">
+                        <div class="card">
+                            <div class="card-header pb-0">
+                                <h4 class="card-title m-t-10">Sales and Expenses</h4>
+                                <div class="table-action float-right">
+                                    <form action="#">
+                                        <div class="form-row">
+                                            <div class="form-group m-b-0">
+                                                <select class="selectpicker show-tick" data-width="auto">
+                                                    <option selected="selected">Last 30 Days</option>
+                                                    <option>Last 1 MOnth</option>
+                                                    <option>Last 6 MOnth</option>
+                                                    <option>Last Year</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-xl-10">
+                                        <div id="morris-bar-chart"></div>
+                                    </div>
+                                    <div class="col-xl-2">
+                                        <div class="d-flex d-xl-block flex-wrap justify-content-around mt-5 mt-xl-0">
+                                            <div class="mb-5 text-xl-right">
+                                                <h5 class="text-success">Total Sell</h5>
+                                                <h6>$30,000</h6>
+                                            </div>
+                                            <div class="mb-5 text-xl-right">
+                                                <h5 class="text-info">Total Receipts</h5>
+                                                <h6>$18,250</h6>
+                                            </div>
+                                            <div class="mb-5 text-xl-right">
+                                                <h5 class="text-danger">Total Expenses</h5>
+                                                <h6>$30,000</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-3">
+                        <div class="card">
+                            <div class="card-body card-body-2">
+                                <h4 class="card-title">Monthly Earning</h4>
+                                <div class="chart">
+                                    <div id="morris-donut-chart"></div>
+                                </div>
+                                <div class="earning-chart-data">
+                                    <ul class="d-flex flex-wrap justify-content-between">
+                                        <li class="d-flex justify-content-between mb-3">
+                                            <span class="name">
+                                                <span class="mr-2 text-warning"><i class="fa fa-circle"></i></span> Chrome
+                                            </span>
+                                            <span class="value">6520</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between mb-3">
+                                            <span class="name">
+                                                <span class="mr-2 text-info"><i class="fa fa-circle"></i></span> Firefox
+                                            </span>
+                                            <span class="value">5520</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between mb-3">
+                                            <span class="name">
+                                                <span class="mr-2 text-success"><i class="fa fa-circle"></i></span> Safari
+                                            </span>
+                                            <span class="value">1520</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between mb-3">
+                                            <span class="name">
+                                                <span class="mr-2 text-primary"><i class="fa fa-circle"></i></span> Others
+                                            </span>
+                                            <span class="value">520</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li class="d-flex">
+                                                <div>
+                                                    <span class="diffrent-color"></span> Chrome
+                                                </div>
+                                                <span class="text-dark">6520</span>
+                                            </li>
+                                            <li class="d-flex">
+                                                <div>
+                                                    <span class="text-success"><i class="fa fa-circle"></i></span> Safari
+                                                </div>
+                                                <span class="text-dark">3750</span>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            <li class="d-flex">
+                                                <div>
+                                                    <span class="text-warning"><i class="fa fa-circle"></i></span> Firefox
+                                                </div>
+                                                <span class="text-dark">2150</span>
+                                            </li>
+                                            <li class="d-flex">
+                                                <div>
+                                                    <span class="text-info"><i class="fa fa-circle"></i></span> Others
+                                                </div>
+                                                <span class="text-dark">750</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card transparent-card m-b-0">
+                            <div class="card-header">
+                                <h4 class="card-title">Suppliers</h4>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-padded market-capital table-responsive-fix-big">
+                                        <thead>
+                                            <tr>
+                                                <th>Serial Number</th>
+                                                <th>Supplier Name</th>
+                                                <th>Supplier Hash</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for i in data %}
+                                            <tr>
+                                                <td>
+                                                    <span class="text-pale-sky">{{ i }} </span>
+                                                </td>
+                                                <td>
+                                                    <span class="text-pale-sky">{{ data[i]['SupplierName'] }}</span>
+                                                </td>
+                                                <td class="text-primary">{{ data[i]['SupplierHash'] }}</td>
+                                                
+                                            </tr>
+                                            {% endfor %}
+                                            
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+       
+
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed and Developed by <a href="/company">Fintact</a> 2020</p>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+   
+    <script src="/static/assets/plugins/common/common.min.js"></script>
+    <script src="/static/dashboard/js/custom.min.js"></script>
+    <script src="/static/dashboard/js/settings.js"></script>
+    <script src="/static/dashboard/js/gleek.js"></script>
+    <script src="/static/dashboard/js/styleSwitcher.js"></script>
+
+
+    <!-- Morris Chart -->
+    <script src="/static/assets/plugins/raphael/raphael.min.js"></script>
+    <script src="/static/assets/plugins/morris/morris.min.js"></script>
+    <script src="/static/dashboard/js/dashboard/dashboard-3.js"></script>
+</body>
+
+</html>

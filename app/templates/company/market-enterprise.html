@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fintact - SCF Solution</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="/static/assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css">
+    <link href="/static/dashboard/css/style.css" rel="stylesheet">
+    
+</head>
+
+<body>
+    
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    
+    <div id="main-wrapper">
+
+        <div class="nav-header">
+            <div class="brand-logo"><a href="index.html"><b><img src="/static/assets/images/logo.png" alt=""> </b><span class="brand-title"><img src="/static/assets/images/logo-text.png" alt=""></span></a>
+            </div>
+            <div class="nav-control">
+                <div class="hamburger"><span class="line"></span>  <span class="line"></span>  <span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">    
+            <div class="header-content">
+               
+                <div class="header-right">
+                    <ul> 
+                        <li class="icons">
+                            <a href="javascript:void(0)" class="log-user">
+                                <img src="/static/assets/images/avatar/1.jpg" alt=""> <span>{{ name }}</span>  <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
+                            </a>
+                            <div class="drop-down dropdown-profile animated bounceInDown">
+                                <div class="dropdown-content-body">
+                                    <ul>
+                                        <li><a href="javascript:void()"><i class="icon-user"></i> <span>My Profile</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-wallet"></i> <span>My Wallet</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-envelope"></i> <span>Inbox</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="fa fa-cog"></i> <span>Setting</span></a>
+                                        </li>
+                                        <li><a href="javascript:void()"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                        </li>
+                                        <li><a href="/logout"><i class="icon-power"></i> <span>Logout</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+        <div class="nk-sidebar">           
+            <div class="nk-nav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label">Dashboard</li>
+                    <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-collage"></i><span class="nav-text">Supplier</span> <span class="badge bg-lgreen text-white nav-badge">3</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="/company/request">Request for Approval</a>
+                            </li>
+                            <li>
+                                <a href="/company/supplier/dynamic">Dynamic Invoice Status</a>
+                            </li>
+                            <li>
+                                <a href="/company/supplier/market">MarketPlace Invoice Status</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-collage"></i><span class="nav-text">Enterprise</span> <span class="badge bg-lgreen text-white nav-badge">3</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="/company/approve">Approve Supplier</a>
+                            </li>
+                            <li><a href="/company/enterprise/dynamic">Dynamic Invoice Status</a>
+                            </li>
+                            <li><a href="/company/enterprise/market">MarketPlace Invoice Status</a>
+                            </li>
+                        
+                        </ul>
+                    </li>
+                    <li class="nav-label">Billing</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-message-draw"></i>                        <span class="nav-text">Invoice</span><span class="badge badge-success nav-badge">03</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="/company/createinvoice">Create Invoice</a>
+                            </li>
+                        </ul>
+                    </li>
+               
+
+                </ul>
+            </div>
+        </div>
+      
+        <div class="content-body">
+            <div class="container-fluid">
+                
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4">Dynamic Discounting Invoice</h4>
+                                <div class="table-responsive">
+                                    <table class="table header-border" style="min-width: 500px;">
+                                        <thead>
+                                            <tr>
+                                                <th>Supplier Name</th>
+                                                <th>Delivery Date</th>
+                                                <th>Payment Date</th>
+                                                <th>Amount</th>
+                                                <th>Order Details</th>
+                                                <th>Working Capital Requirement</th> 
+                                                <th>Interest Rate</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for i in data %}
+                                            <tr>
+                                                <td>
+                                                     {{ data[i]['Supplier']}}
+                                                </td>
+                                                <td>{{ data[i]['DelDate']}} </td>
+                                                <td>
+                                                    <span class="text-muted">{{ data[i]['PaymentDate']}}</span>
+                                                </td>
+                                                <td>
+                                                    {{ data[i]['Amount']}}
+                                                </td>
+                                                <td>
+                                                    {{ data[i]['InvoiceText']}}
+                                                </td>
+                                                <td  style="text-align: center;">
+                                                    {{ data[i]['Capital']}}
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control bg-transparent" id="{{i}}-interest" placeholder="5%" min="0" max="60">
+                                                </td>
+                                                <td>
+                                                    <span>
+                                                        
+                                                        <button type="button" class="btn btn-outline-success" id="{{i}}-accept">Approve</button>
+                                                        <div style="margin:10%">
+
+                                                        </div>
+                                                        <button type="button" class="btn btn-outline-danger" id="{{i}}-reject" >Reject</button>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- #/ container -->
+        </div>
+          
+        
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright &copy; Designed and Developed by <a href="/company">Fintact</a> 2020</p>
+            </div>
+        </div>
+        
+    </div>
+   
+    <script src="/static/assets/plugins/common/common.min.js"></script>
+    <script src="/static/dashboard/js/custom.min.js"></script>
+    <script src="/static/dashboard/js/settings.js"></script>
+    <script src="/static/assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="/static/dashboard/js/gleek.js"></script>
+    <script src="/static/dashboard/js/styleSwitcher.js"></script>
+
+    <script>
+
+$( document ).ready(function() {
+
+    {% for i in data %}
+
+    $('#{{i}}-accept').on('click', function (event) {
+       
+        $.ajax({
+                    data: {
+                        Id :  "{{ data[i]['Id']}}",
+                        Interest:  $("#{{i}}-interest").val()
+                    },
+                    type: "POST",
+                    url: '/company/market/ship'
+                })
+                    .done(function (data) {
+                        if (data.error) {
+                            alert("Error")
+                        }
+                        else {
+                            $(location).attr('href', '/company/enterprise/market')
+                        }
+                    });
+        event.preventDefault();
+    });
+
+
+    $('#{{i}}-reject').on('click', function (event) {
+        
+        $.ajax({
+                    data: {
+                        Id : "{{ data[i]['Id']}}"
+
+                    },
+                    type: "POST",
+                    url: '/company/dynamicreject'
+                })
+                    .done(function (data) {
+                        if (data.error) {
+                            alert("Error")
+                        }
+                        else {
+                            $(location).attr('href', '/company/enterprise/market')
+                        }
+                    });
+
+        event.preventDefault();
+    });
+
+
+    {% endfor %}
+});
+    </script>
+</body>
+
+</html>
