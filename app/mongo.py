@@ -215,3 +215,13 @@ def DynamicPayment(Id):
     SupplierInvoiceCollection.update_one(l2,l3)
 
     return capital,SenderCode
+
+def DynamicRemainingPayment(Id):
+    l1 = {'Id':Id}
+    result = SupplierInvoiceCollection.find(l1)
+    
+    for  i in result:
+        RecieverCode = i['Hash']
+        RemainingPayment = str(int(int(i['Amount']) -  (int(i['Amount'])*int(i['Margin']))/100))
+
+    return RecieverCode,RemainingPayment
