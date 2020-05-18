@@ -11,11 +11,11 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="/static/assets/plugins/bootstrap-touchspin/css/jquery.bootstrap-touchspin.min.css">
     <link href="/static/dashboard/css/style.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
-    
+
     <!--*******************
         Preloader start
     ********************-->
@@ -26,14 +26,15 @@
             </svg>
         </div>
     </div>
-    
+
     <div id="main-wrapper">
 
         <div class="nav-header">
-            <div class="brand-logo"><a href="index.html"><b><img src="/static/assets/images/logo.png" alt=""> </b><span class="brand-title"><img src="/static/assets/images/logo-text.png" alt=""></span></a>
+            <div class="brand-logo"><a href="index.html"><b><img src="/static/assets/images/logo.png" alt=""> </b><span
+                        class="brand-title"><img src="/static/assets/images/logo-text.png" alt=""></span></a>
             </div>
             <div class="nav-control">
-                <div class="hamburger"><span class="line"></span>  <span class="line"></span>  <span class="line"></span>
+                <div class="hamburger"><span class="line"></span> <span class="line"></span> <span class="line"></span>
                 </div>
             </div>
         </div>
@@ -44,27 +45,33 @@
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">    
+        <div class="header">
             <div class="header-content">
-               
+
                 <div class="header-right">
-                    <ul> 
+                    <ul>
                         <li class="icons">
                             <a href="javascript:void(0)" class="log-user">
-                                <img src="/static/assets/images/avatar/1.jpg" alt=""> <span>{{ name }}</span>  <i class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
+                                <img src="/static/assets/images/avatar/1.jpg" alt=""> <span>{{ name }}</span> <i
+                                    class="fa fa-caret-down f-s-14" aria-hidden="true"></i>
                             </a>
                             <div class="drop-down dropdown-profile animated bounceInDown">
                                 <div class="dropdown-content-body">
                                     <ul>
-                                        <li><a href="javascript:void()"><i class="icon-user"></i> <span>My Profile</span></a>
+                                        <li><a href="javascript:void()"><i class="icon-user"></i> <span>My
+                                                    Profile</span></a>
                                         </li>
-                                        <li><a href="javascript:void()"><i class="icon-wallet"></i> <span>My Wallet</span></a>
+                                        <li><a href="javascript:void()"><i class="icon-wallet"></i> <span>My
+                                                    Wallet</span></a>
                                         </li>
-                                        <li><a href="javascript:void()"><i class="icon-envelope"></i> <span>Inbox</span></a>
+                                        <li><a href="javascript:void()"><i class="icon-envelope"></i>
+                                                <span>Inbox</span></a>
                                         </li>
-                                        <li><a href="javascript:void()"><i class="fa fa-cog"></i> <span>Setting</span></a>
+                                        <li><a href="javascript:void()"><i class="fa fa-cog"></i>
+                                                <span>Setting</span></a>
                                         </li>
-                                        <li><a href="javascript:void()"><i class="icon-lock"></i> <span>Lock Screen</span></a>
+                                        <li><a href="javascript:void()"><i class="icon-lock"></i> <span>Lock
+                                                    Screen</span></a>
                                         </li>
                                         <li><a href="/logout"><i class="icon-power"></i> <span>Logout</span></a>
                                         </li>
@@ -76,12 +83,14 @@
                 </div>
             </div>
         </div>
-       
-        <div class="nk-sidebar">           
+
+        <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li class="nav-label">Dashboard</li> 
-                    <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-collage"></i><span class="nav-text">Supplier</span> <span class="badge bg-lgreen text-white nav-badge">3</span></a>
+                    <li class="nav-label">Dashboard</li>
+                    <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()"
+                            aria-expanded="false"><i class="mdi mdi-collage"></i><span class="nav-text">Supplier</span>
+                            <span class="badge bg-lgreen text-white nav-badge">3</span></a>
                         <ul aria-expanded="false">
                             <li><a href="/company/request">Request for Approval</a>
                             </li>
@@ -93,7 +102,10 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-collage"></i><span class="nav-text">Enterprise</span> <span class="badge bg-lgreen text-white nav-badge">3</span></a>
+                    <li class="mega-menu mega-menu-xl"><a class="has-arrow" href="javascript:void()"
+                            aria-expanded="false"><i class="mdi mdi-collage"></i><span
+                                class="nav-text">Enterprise</span> <span
+                                class="badge bg-lgreen text-white nav-badge">3</span></a>
                         <ul aria-expanded="false">
                             <li><a href="/company/approve">Approve Supplier</a>
                             </li>
@@ -101,27 +113,41 @@
                             </li>
                             <li><a href="/company/enterprise/market">MarketPlace Invoice Status</a>
                             </li>
-                        
+
                         </ul>
                     </li>
-                  
-                 
+
+
                     <li class="nav-label">Billing</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i class="mdi mdi-message-draw"></i>                        <span class="nav-text">Invoice</span><span class="badge badge-success nav-badge">1</span></a>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="mdi mdi-message-draw"></i> <span class="nav-text">Invoice</span><span
+                                class="badge badge-success nav-badge">1</span></a>
                         <ul aria-expanded="false">
                             <li><a href="/company/createinvoice">Create Invoice</a>
                             </li>
                         </ul>
                     </li>
-               
+
 
                 </ul>
             </div>
         </div>
-      
+
         <div class="content-body">
             <div class="container-fluid">
-                
+                <div class="row" style="margin-bottom: 3%; margin-top: 2%;">
+                    <div class="col-lg-12">
+                        <div class="alert alert-success" role="alert" id="PaymentDetails">
+                            <h2 id="PaymentId">
+
+                            </h2>
+                            <div id="PaymentInfo">
+
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -146,103 +172,108 @@
                                         <tbody>
                                             {% for i in data %}
 
-                                             {% if  data[i]['Status'] == "Supplier" %}
-                                                <tr>
-                                                    <td>
-                                                        {{ data[i]['SupplierHash']}}
-                                                    </td>
-                                                    <td>{{ data[i]['DelDate']}} </td>
-                                                    <td>
-                                                        <span class="text-muted">{{ data[i]['PaymentDate']}}</span>
-                                                    </td>
-                                                    <td>
-                                                        {{ data[i]['Amount']}}
-                                                    </td>
-                                                    <td>
-                                                        {{ data[i]['InvoiceText']}}
-                                                    </td>
+                                            {% if  data[i]['Status'] == "Supplier" %}
+                                            <tr>
+                                                <td>
+                                                    {{ data[i]['SupplierHash']}}
+                                                </td>
+                                                <td>{{ data[i]['DelDate']}} </td>
+                                                <td>
+                                                    <span class="text-muted">{{ data[i]['PaymentDate']}}</span>
+                                                </td>
+                                                <td>
+                                                    {{ data[i]['Amount']}}
+                                                </td>
+                                                <td>
+                                                    {{ data[i]['InvoiceText']}}
+                                                </td>
 
-                                                    <td  style="text-align: center;" colspan="4">
-                                                        <span class="label label-info">Waiting for Supplier to Approve</span>
-                                                    </td>
-                                                   
-                                                </tr>
+                                                <td style="text-align: center;" colspan="4">
+                                                    <span class="label label-info">Waiting for Supplier to
+                                                        Approve</span>
+                                                </td>
+
+                                            </tr>
 
 
 
-                                                {% elif  data[i]['Status'] == "Final" %}
-                                                <tr>
-                                                    <td>
-                                                        {{ data[i]['Supplier']}}
-                                                    </td>
-                                                    <td>{{ data[i]['DelDate']}} </td>
-                                                    <td>
-                                                        <span class="text-muted">{{ data[i]['PaymentDate']}}</span>
-                                                    </td>
-                                                    <td>
-                                                        {{ data[i]['Amount']}}
-                                                    </td>
-                                                    <td>
-                                                        {{ data[i]['InvoiceText']}}
-                                                    </td>
-                                                    <td style="text-align: center;">
-                                                        {{ data[i]['Margin']}}
-                                                    </td>
-                                                    <td  style="text-align: center;">
-                                                        {{ data[i]['Capital']}}
-                                                    </td>
-                                                    <td>
-                                                        {{ data[i]['Remain'] }}
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                            
-                                                            <button type="button" class="btn btn-outline-success" id="{{i}}-remain">Make Remaining Payment</button>
-                                                            <div style="margin:10%">
+                                            {% elif  data[i]['Status'] == "Final" %}
+                                            <tr>
+                                                <td>
+                                                    {{ data[i]['Supplier']}}
+                                                </td>
+                                                <td>{{ data[i]['DelDate']}} </td>
+                                                <td>
+                                                    <span class="text-muted">{{ data[i]['PaymentDate']}}</span>
+                                                </td>
+                                                <td>
+                                                    {{ data[i]['Amount']}}
+                                                </td>
+                                                <td>
+                                                    {{ data[i]['InvoiceText']}}
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    {{ data[i]['Margin']}}
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    {{ data[i]['Capital']}}
+                                                </td>
+                                                <td>
+                                                    {{ data[i]['Remain'] }}
+                                                </td>
+                                                <td>
+                                                    <span>
 
-                                                            </div>
-                                                            <button type="button" class="btn btn-outline-danger" id="{{i}}-reject" >Reject</button>
-                                                        </span>
-                                                    </td>
-                                                </tr>
+                                                        <button type="button" class="btn btn-outline-success"
+                                                            id="{{i}}-remain">Make Remaining Payment</button>
+                                                        <div style="margin:10%">
 
-                                                
-                                                {% else %}
-                                                <tr>
-                                                    <td>
-                                                        {{ data[i]['Supplier']}}
-                                                    </td>
-                                                    <td>{{ data[i]['DelDate']}} </td>
-                                                    <td>
-                                                        <span class="text-muted">{{ data[i]['PaymentDate']}}</span>
-                                                    </td>
-                                                    <td>
-                                                        {{ data[i]['Amount']}}
-                                                    </td>
-                                                    <td>
-                                                        {{ data[i]['InvoiceText']}}
-                                                    </td>
-                                                    <td style="text-align: center;">
-                                                        {{ data[i]['Margin']}}
-                                                    </td>
-                                                    <td  style="text-align: center;">
-                                                        {{ data[i]['Capital']}}
-                                                    </td>
-                                                    <td>
-                                                        {{ data[i]['Remain'] }}
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                            
-                                                            <button type="button" class="btn btn-outline-success" id="{{i}}-accept">Make Payment</button>
-                                                            <div style="margin:10%">
+                                                        </div>
+                                                        <button type="button" class="btn btn-outline-danger"
+                                                            id="{{i}}-reject">Reject</button>
+                                                    </span>
+                                                </td>
+                                            </tr>
 
-                                                            </div>
-                                                            <button type="button" class="btn btn-outline-danger" id="{{i}}-reject" >Reject</button>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                {% endif %}
+
+                                            {% else %}
+                                            <tr>
+                                                <td>
+                                                    {{ data[i]['Supplier']}}
+                                                </td>
+                                                <td>{{ data[i]['DelDate']}} </td>
+                                                <td>
+                                                    <span class="text-muted">{{ data[i]['PaymentDate']}}</span>
+                                                </td>
+                                                <td>
+                                                    {{ data[i]['Amount']}}
+                                                </td>
+                                                <td>
+                                                    {{ data[i]['InvoiceText']}}
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    {{ data[i]['Margin']}}
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    {{ data[i]['Capital']}}
+                                                </td>
+                                                <td>
+                                                    {{ data[i]['Remain'] }}
+                                                </td>
+                                                <td>
+                                                    <span>
+
+                                                        <button type="button" class="btn btn-outline-success"
+                                                            id="{{i}}-accept">Make Payment</button>
+                                                        <div style="margin:10%">
+
+                                                        </div>
+                                                        <button type="button" class="btn btn-outline-danger"
+                                                            id="{{i}}-reject">Reject</button>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            {% endif %}
                                             {% endfor %}
                                         </tbody>
                                     </table>
@@ -251,20 +282,20 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <!-- #/ container -->
         </div>
-          
-        
+
+
         <div class="footer">
             <div class="copyright">
                 <p>Copyright &copy; Designed and Developed by <a href="/company">Fintact</a> 2020</p>
             </div>
         </div>
-        
+
     </div>
-   
+
     <script src="/static/assets/plugins/common/common.min.js"></script>
     <script src="/static/dashboard/js/custom.min.js"></script>
     <script src="/static/dashboard/js/settings.js"></script>
@@ -274,17 +305,17 @@
 
     <script>
 
-$( document ).ready(function() {
+        $(document).ready(function () {
+            $("#PaymentDetails").hide();
+            {% for i in data %}
 
-    {% for i in data %}
+            $('#{{i}}-accept').on('click', function (event) {
 
-    $('#{{i}}-accept').on('click', function (event) {
-       
-        $.ajax({
+                $.ajax({
                     data: {
-                        Id :  "{{ data[i]['Id']}}"
-                        
-                        
+                        Id: "{{ data[i]['Id']}}"
+
+
                     },
                     type: "POST",
                     url: '/company/dynamic/payment'
@@ -294,18 +325,20 @@ $( document ).ready(function() {
                             alert("Error")
                         }
                         else {
-                            $(location).attr('href', '/company/enterprise/dynamic')
+                            $("#PaymentDetails").show();
+                            $("#PaymentId").text(data.Header);
+                            $("#PaymentInfo").text(JSON.stringify(data.Text));
                         }
                     });
-        event.preventDefault();
-    });
+                event.preventDefault();
+            });
 
 
-    $('#{{i}}-reject').on('click', function (event) {
-        
-        $.ajax({
+            $('#{{i}}-reject').on('click', function (event) {
+
+                $.ajax({
                     data: {
-                        Id : "{{ data[i]['Id']}}"
+                        Id: "{{ data[i]['Id']}}"
 
                     },
                     type: "POST",
@@ -320,17 +353,17 @@ $( document ).ready(function() {
                         }
                     });
 
-        event.preventDefault();
-    });
+                event.preventDefault();
+            });
 
-    
-    $('#{{i}}-remain').on('click', function (event) {
-        
-        $.ajax({
+
+            $('#{{i}}-remain').on('click', function (event) {
+
+                $.ajax({
                     data: {
-                        Id :  "{{ data[i]['Id']}}"
-                        
-                        
+                        Id: "{{ data[i]['Id']}}"
+
+
                     },
                     type: "POST",
                     url: '/company/dynamic/remain'
@@ -340,15 +373,21 @@ $( document ).ready(function() {
                             alert("Error")
                         }
                         else {
-                            $(location).attr('href', '/company/enterprise/dynamic')
+                           
+                        
+                            
+                            $("#PaymentDetails").show();
+                            $("#PaymentId").text(data.Header);
+                            $("#PaymentInfo").text(JSON.stringify(data.Text));
+                            
                         }
                     });
-        event.preventDefault();
-    });
+                event.preventDefault();
+            });
 
 
-    {% endfor %}
-});
+            {% endfor %}
+        });
     </script>
 </body>
 

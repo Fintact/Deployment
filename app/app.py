@@ -31,6 +31,7 @@ def Company():
             return redirect("/capital")
         data = mongo.SupplierData(session['hash'])
         balance = tezos.GetBalance(session['hash'])
+        
         return render_template('/company/index.html',name=session['name'],data=data,hash=session['hash'],balance=balance['balance'])
     return redirect("/")
 
@@ -69,7 +70,7 @@ def DynamicApprove():
             return redirect("/capital")
         
         data = mongo.DynamicEnterpriseData(session['hash'])
-        print(data)
+        
         return render_template("/company/dynamic-approve.html",name=session['name'],data=data)
     return redirect("/")
 
@@ -226,9 +227,10 @@ def DynamicPayment():
     Id = request.form['Id']
     amount,recieverhash = mongo.DynamicPayment(Id)
     print(Id,amount,recieverhash,session['hash'])
-    output =  tezos.Payment(session['hash'],recieverhash,int(amount))
+    output = {'error':False,'Header':Id}
+    output['Text'] =  tezos.Payment(session['hash'],recieverhash,int(amount))
     print("Transaction Output:",output)
-    return "asd"
+    return output
 
 @app.route("/company/dynamic/remain",methods=['POST'])
 def DynamicRemain():
@@ -236,10 +238,11 @@ def DynamicRemain():
     RecieverHash,RemainingPayment = mongo.DynamicRemainingPayment(Id)
     print(session['hash'],RemainingPayment,RecieverHash)
     print(Id)
-    output = tezos.Payment(session['hash'],RecieverHash,RemainingPayment)
+    output = {'error':False,'Header':Id}
+    output['Text'] = tezos.Payment(session['hash'],RecieverHash,RemainingPayment)
     print("Transaction Output:",output)
     mongo.RemoveInvoice(Id)
-    return "asd"
+    return output
 
 @app.route("/company/market/ship",methods=['POST'])
 def MarketShip():
