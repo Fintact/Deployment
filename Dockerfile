@@ -1,4 +1,4 @@
-FROM tezos-blockchain
+FROM anmolgoyal/tezos-blockchain
 RUN apt-get update -y
 COPY app /app
 WORKDIR /app
